@@ -5,7 +5,7 @@ public class Student extends Person {
     private String classId;
     private String accommodation;
 
-    public Student(String name, int yearOfBirth, String id, String classId, String accommodation) {
+    public Student(String name, String yearOfBirth, String id, String classId, String accommodation) {
         super(name, yearOfBirth);
         this.id = id;
         this.classId = classId;
@@ -17,7 +17,7 @@ public class Student extends Person {
         this.id = id;
     }
 
-    public void setLop(String classId) {
+    public void setClassId(String classId) {
         this.classId = classId;
     }
 

@@ -2,10 +2,10 @@ package entity;
 
 public class Person {
     private String name;
-    private int yearOfBirth; // nam sinh de tim khoa hoc cua sinh vien dc ko??
+    private String yearOfBirth; // nam sinh de tim khoa hoc cua sinh vien dc ko??
 
     // Constructor
-    public Person(String name, int yearOfBirth) {
+    public Person(String name, String yearOfBirth) {
         this.name = name;
         this.yearOfBirth = yearOfBirth;
     }
@@ -15,7 +15,7 @@ public class Person {
         this.name = name;
     }
 
-    public void setYearOfBirth(int yearOfBirth) {
+    public void setYearOfBirth(String yearOfBirth) {
         this.yearOfBirth = yearOfBirth;
     }
 
@@ -24,7 +24,7 @@ public class Person {
         return name;
     }
 
-    public int getYearOfBirth() {
+    public String getYearOfBirth() {
         return yearOfBirth;
     }
 
