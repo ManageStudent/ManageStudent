@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="304691e0-1d71-4c5a-9992-4830c55663cf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/controller/EditData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/Find.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/Sort.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/UpdateData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Student.java" afterDir="false" />
-    </list>
+    <list default="true" id="304691e0-1d71-4c5a-9992-4830c55663cf" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
