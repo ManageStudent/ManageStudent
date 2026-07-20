@@ -8,3 +8,10 @@ Góp ý phân tầng
 - UI: Thêm, sửa, xoá, in ra danh sách, thoát.
 
 Note: Đã làm Person -> Student
+
+
+Chỉnh sửa 20_07_2026:
+- Model: 
+    + Đã thêm class StudentModel bao gồm xử lý lưu dữ liệu và method add, remove cho cân xứng với bên EditData.java. 
+    + Đã sửa lại getInfo có khả năng trả về một chuỗi String trong Person và Student
+- Controller: Trong EditData.java tạo một object mang tên model để có thể hoạt động add và remove.

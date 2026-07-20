@@ -1,6 +1,7 @@
 package controller;
 
 import entity.Student;
+import entity.StudentModel;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -12,6 +13,8 @@ public class EditData {
 //    String classId;
 //    String residence;
 
+    private StudentModel model = new StudentModel();
+    
     public void CheckStudent(String name, String yearOfbirth, String studentId, String classId, String residence) {
         try {
             ArrayList<String> errors = new ArrayList<>();

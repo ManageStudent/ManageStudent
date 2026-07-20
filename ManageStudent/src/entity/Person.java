@@ -29,7 +29,7 @@ public class Person {
     }
 
     // getInfo 
-    public void getInfo() {
-        System.out.println(name + " " + yearOfBirth);
+    public String getInfo() {
+        return name + " " + yearOfBirth;
     }
 }

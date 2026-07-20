@@ -1,5 +1,5 @@
 package entity;
-
+import java.util.ArrayList;
 public class Student extends Person {
     private String id;
     private String classId;
@@ -12,7 +12,7 @@ public class Student extends Person {
         this.accommodation = accommodation;
     }
 
-    // setter chinh sua MSSV, Lop, ChoO
+    // setter chinh sua id (MSSV), classID (Lop), accommodation (ChoO)
     public void setId(String id) {
         this.id = id;
     }
@@ -39,8 +39,7 @@ public class Student extends Person {
     } 
 
     @Override
-    public void getInfo() {
-        super.getInfo();
-        System.out.println(id + " " + classId + " " + accommodation);
+    public String getInfo() {
+        return super.getInfo();
     }
 }
