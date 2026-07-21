@@ -3,7 +3,7 @@ import entity.Student;
 
 import java.util.Scanner;
 
-import UI.UI;
+import UI.StudentUI;
 public class Main {
     public static void main(String[] args) {
         // Test
