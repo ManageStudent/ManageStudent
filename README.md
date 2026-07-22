@@ -10,11 +10,14 @@ Góp ý phân tầng
 Note: Đã làm Person -> Student
 
 
+
 _**Chỉnh sửa 20_07_2026:**_
 - Model: 
     + Đã thêm class StudentModel bao gồm xử lý lưu dữ liệu và method add, remove cho cân xứng với bên EditData.java. 
     + Đã sửa lại getInfo có khả năng trả về một chuỗi String trong Person và Student
 - Controller: Trong EditData.java tạo một object mang tên model để có thể hoạt động add và remove.
+
+
 
 _**Chỉnh sửa 21_07_2026:**_
 - Model:
