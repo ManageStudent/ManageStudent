@@ -15,3 +15,9 @@ Chỉnh sửa 20_07_2026:
     + Đã thêm class StudentModel bao gồm xử lý lưu dữ liệu và method add, remove cho cân xứng với bên EditData.java. 
     + Đã sửa lại getInfo có khả năng trả về một chuỗi String trong Person và Student
 - Controller: Trong EditData.java tạo một object mang tên model để có thể hoạt động add và remove.
+
+Chỉnh sửa 21_07_2026:
+- Model:
+    + Thêm các method kiểm tra tính tồn tại của dữ liệu trong kho dữ liệu StudentModel cho Controller sử dụng.
+- Controller:
+    + Thêm mới Find.java: Tìm kiếm dữ liệu sinh viên theo yêu cầu (Tên, năm sinh, mssv, chỗ ở, lớp).
