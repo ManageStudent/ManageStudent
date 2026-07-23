@@ -21,7 +21,7 @@ public class Student extends Person {
         this.classId = classId;
     }
 
-    public void setChoO(String accommodation) {
+    public void setAccommodation(String accommodation) {
         this.accommodation = accommodation;
     }
 
