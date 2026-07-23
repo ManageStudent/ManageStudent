@@ -3,10 +3,12 @@ package entity;
 import controller.Find;
 
 import java.lang.reflect.Array;
+import java.lang.String;
 import java.util.ArrayList;
 import controller.Find;
 
 // Model --> Controller
+
 public class StudentModel {
 
     private ArrayList<Student> studentList = new ArrayList<>();
@@ -40,7 +42,7 @@ public class StudentModel {
         return result;
     }
 
-    public ArrayList<Student> isExistIdList (String number) {
+    public ArrayList<Student> isExistIdList(String number) {
         ArrayList<Student> result = new ArrayList<>();
         for (Student s : studentList) {
             if (s.getId().contains(number)) {
@@ -50,7 +52,7 @@ public class StudentModel {
         return result;
     }
 
-    public ArrayList<Student> isExistYearOfBirthList (String number) {
+    public ArrayList<Student> isExistYearOfBirthList(String number) {
         ArrayList<Student> result = new ArrayList<>();
         for (Student s : studentList) {
             if (s.getYearOfBirth().contains(number)) {
@@ -60,7 +62,7 @@ public class StudentModel {
         return result;
     }
 
-    public ArrayList<Student> isExistClassID (String keyword) {
+    public ArrayList<Student> isExistClassID(String keyword) {
         ArrayList<Student> result = new ArrayList<>();
         for (Student s : studentList) {
             if (s.getClassId().toLowerCase().contains(keyword.toLowerCase())) {
@@ -70,7 +72,7 @@ public class StudentModel {
         return result;
     }
 
-    public ArrayList<Student> isExistAccommodationList (String keyword) {
+    public ArrayList<Student> isExistAccommodationList(String keyword) {
         ArrayList<Student> result = new ArrayList<>();
         for (Student s : studentList) {
             if (s.getAccommodation().toLowerCase().contains(keyword.toLowerCase())) {

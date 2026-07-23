@@ -5,8 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ec332de-c8d5-4cf1-a9df-157596272734" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/discord.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../out/production/ManageStudent/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../out/production/ManageStudent/UI/StudentUI.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../out/production/ManageStudent/controller/EditData.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../out/production/ManageStudent/controller/Find.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../out/production/ManageStudent/controller/Sort.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../out/production/ManageStudent/controller/UpdateData.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../out/production/ManageStudent/entity/Person.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../out/production/ManageStudent/entity/Student.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../out/production/ManageStudent/entity/StudentModel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/StudentUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/StudentUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/EditData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/EditData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/Find.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/Find.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/StudentModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/StudentModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +71,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "StudentController",
+    "git-widget-placeholder": "Merging StudentController",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/ADMIN/Desktop/OOP - Project/ManageStudent/ManageStudent",

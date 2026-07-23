@@ -7,16 +7,16 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class EditData {
-//    String name;
-//    String yearOfbirth;
-//    String studentId;
-//    String classId;
-//    String residence;
 
-    private StudentModel model = new StudentModel();
-    
-    public void CheckStudent(String name, String yearOfbirth, String studentId, String classId, String residence) {
+    private StudentModel model;
+
+    public EditData(StudentModel sharedModel) {
+        this.model = sharedModel;
+    }
+
+    public void CheckStudent(String name, String yearOfbirth, String studentId, String classId, String residence) throws IllegalArgumentException {
         ArrayList<String> errors = new ArrayList<>();
+
         // Name
         if (name == null || name.isEmpty()) errors.add("Name is required.");
         else if (!name.matches("^[a-zA-Z\\s]+$")) errors.add("Name must contain only letters.");
@@ -42,7 +42,6 @@ public class EditData {
         else if (!classId.matches("^[A-Z0-9]+$"))
             errors.add("Class ID must contain only uppercase letters and digits.");
 
-
         // Accommodation
         if (residence == null || residence.isEmpty()) errors.add("Residence is required.");
         else if (!residence.matches("^[a-zA-Z0-9\\s]+$"))
@@ -54,13 +53,17 @@ public class EditData {
         }
     }
 
-    public void AddStudent (Student student) throws Exception {
-        if (model.isExistId(student.getId())) throw new Exception("Student ID already exists.");
+    public void AddStudent(Student student) throws Exception {
+        if (model.isExistId(student.getId())) {
+            throw new Exception("Student ID already exists.");
+        }
         model.add(student);
     }
 
-    public void DeleteStudent (Student student) throws Exception{
-        if (!model.isExistId(student.getId())) throw new Exception("Student not found.");
+    public void DeleteStudent(Student student) throws Exception {
+        if (!model.isExistId(student.getId())) {
+            throw new Exception("Student not found.");
+        }
         model.remove(student);
     }
 }

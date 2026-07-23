@@ -6,8 +6,14 @@ import entity.StudentModel;
 import java.util.ArrayList;
 
 public class Find {
-    private StudentModel model = new StudentModel();
-    public ArrayList<Student> FindByName (String keyword) throws Exception{
+
+    private StudentModel model;
+
+    public Find(StudentModel sharedModel) {
+        this.model = sharedModel;
+    }
+
+    public ArrayList<Student> FindByName(String keyword) throws Exception {
         ArrayList<String> errors = new ArrayList();
         ArrayList<Student> result = model.isExistNameList(keyword);
         if (keyword == null || keyword.isEmpty()) errors.add("Keyword is required.");
