@@ -1,5 +1,5 @@
 package entity;
-import java.util.ArrayList;
+
 public class Student extends Person {
     private String id;
     private String classId;
