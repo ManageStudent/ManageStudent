@@ -24,13 +24,12 @@ public class Find {
 
         if (!errors.isEmpty()) throw new IllegalArgumentException(String.join("\n", errors));
         return result;
-
     }
 
-    public ArrayList<Student> FindByStudentId(String number) throws Exception {
+    public ArrayList<Student> FindByStudentId (String number) throws Exception {
         ArrayList<String> errors = new ArrayList<>();
         ArrayList<Student> result = model.isExistIdList(number);
-        if (number == null || number.isEmpty()) errors.add("Student ID is required.");
+        if (number== null || number.isEmpty()) errors.add("Student ID is required.");
         else {
             if (number.matches("^[0-9]+$")) errors.add("Student ID contains numbers only.");
             if (number.length() > 8) errors.add("Invalid student ID.");
@@ -40,7 +39,7 @@ public class Find {
         return result;
     }
 
-    public ArrayList<Student> FindByYearOfBirth(String number) throws Exception {
+    public ArrayList<Student> FindByYearOfBirth (String number) throws Exception {
         ArrayList<String> errors = new ArrayList<>();
         ArrayList<Student> result = model.isExistYearOfBirthList(number);
         if (number == null || number.isEmpty()) errors.add("Year of birth is required.");
@@ -51,10 +50,9 @@ public class Find {
         }
         if (!errors.isEmpty()) throw new IllegalArgumentException(String.join("\n", errors));
         return result;
-
     }
 
-    public ArrayList<Student> FindByClassID(String keyword) throws Exception {
+    public ArrayList<Student> FindByClassID (String keyword) throws Exception {
         ArrayList<String> errors = new ArrayList<>();
         ArrayList<Student> result = model.isExistClassID(keyword);
         if (keyword == null || keyword.isEmpty()) errors.add("ClassID is required.");
@@ -64,10 +62,9 @@ public class Find {
         }
         if (!errors.isEmpty()) throw new IllegalArgumentException(String.join("\n", errors));
         return result;
-
     }
 
-    public ArrayList<Student> FindByAccommodation(String keyword) throws Exception {
+    public ArrayList<Student> FindByAccommodation (String keyword) throws Exception {
         ArrayList<String> errors = new ArrayList<>();
         ArrayList<Student> result = model.isExistAccommodationList(keyword);
         if (keyword == null || keyword.isEmpty()) errors.add("Accommodation is required.");
@@ -76,6 +73,5 @@ public class Find {
         }
         if (!errors.isEmpty()) throw new IllegalArgumentException(String.join("\n", errors));
         return result;
-
     }
 }

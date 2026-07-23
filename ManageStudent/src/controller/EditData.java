@@ -36,6 +36,7 @@ public class EditData {
             if (studentId.length() != 8) errors.add("Student ID must be 8 digits.");
         }
 
+
         // ClassID
         if (classId.isEmpty() || classId == null) errors.add("Class ID is required.");
         else if (!classId.matches("^[A-Z0-9]+$"))
@@ -46,6 +47,7 @@ public class EditData {
         else if (!residence.matches("^[a-zA-Z0-9\\s]+$"))
             errors.add("Address can only contain letters and numbers.");
 
+        // Return errors
         if (!errors.isEmpty()) {
             throw new IllegalArgumentException(String.join("\n", errors));
         }
