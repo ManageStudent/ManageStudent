@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3ec332de-c8d5-4cf1-a9df-157596272734" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/StudentUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/StudentUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/Sort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/Sort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/UpdateData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/UpdateData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/StudentModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/StudentModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/ManageStudent/UI/StudentUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/ManageStudent/UI/StudentUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/ManageStudent/controller/EditData.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/ManageStudent/controller/EditData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/ManageStudent/controller/Find.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/ManageStudent/controller/Find.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/ManageStudent/controller/Sort.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/ManageStudent/controller/Sort.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/ManageStudent/controller/UpdateData.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/ManageStudent/controller/UpdateData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/ManageStudent/entity/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/ManageStudent/entity/Student.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/ManageStudent/entity/StudentModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/ManageStudent/entity/StudentModel.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;KatariiDev&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/ManageStudent/ManageStudent.git&quot;,
+    &quot;accountId&quot;: &quot;93874fa0-af35-4a10-afc4-014bf9f513cf&quot;
+  }
+}</component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0000027238061868" />
+      <entry key="MS500" value="1.1341201601772084" />
+      <entry key="S2" value="2.131566063209731" />
+      <entry key="S5" value="2.9460272655705784" />
+      <entry key="S10" value="3.3950580419130807" />
+      <entry key="S30" value="3.777242016662613" />
+      <entry key="S60" value="3.8917210613821283" />
+      <entry key="M2" value="4.019852013392111" />
+      <entry key="M5" value="4.336669406808613" />
+      <entry key="M10" value="4.588310982820376" />
+      <entry key="M15" value="4.703581328778176" />
+      <entry key="M30" value="4.839531877139024" />
+      <entry key="H1" value="4.916435021930319" />
+      <entry key="H2" value="4.957348973099576" />
+      <entry key="H4" value="4.978452707514002" />
+      <entry key="D1" value="4.996377579632068" />
+      <entry key="W1" value="4.999481741871595" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="1.483022412275671E-215" />
+      <entry key="S2" value="1.9623972590111462E-54" />
+      <entry key="S5" value="3.2893854831062473E-22" />
+      <entry key="S10" value="1.8136663097456072E-11" />
+      <entry key="S30" value="2.627357246309429E-4" />
+      <entry key="S60" value="0.016209124733647495" />
+      <entry key="M2" value="0.12731506090658515" />
+      <entry key="M5" value="0.43848214426648446" />
+      <entry key="M10" value="0.6621798428421727" />
+      <entry key="M15" value="0.7597148885917857" />
+      <entry key="M30" value="0.8716162507616445" />
+      <entry key="H1" value="0.9336039046413872" />
+      <entry key="H2" value="0.9662318068876572" />
+      <entry key="H4" value="0.9829709084645675" />
+      <entry key="D1" value="0.9971414677530384" />
+      <entry key="W1" value="0.9995911370853915" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="5.320485778997912E-4" />
+      <entry key="MS500" value="0.32880465993276903" />
+      <entry key="S2" value="1.7551371413190169" />
+      <entry key="S5" value="2.765264735454897" />
+      <entry key="S10" value="3.298131824201324" />
+      <entry key="S30" value="3.7435290371133596" />
+      <entry key="S60" value="3.89038017268095" />
+      <entry key="M2" value="4.1371154648170645" />
+      <entry key="M5" value="4.769715510115458" />
+      <entry key="M10" value="5.247258934214649" />
+      <entry key="M15" value="5.46099148461937" />
+      <entry key="M30" value="5.709909380626029" />
+      <entry key="H1" value="5.8493955730441725" />
+      <entry key="H2" value="5.923252784744683" />
+      <entry key="H4" value="5.961257996601888" />
+      <entry key="D1" value="5.993491215253838" />
+      <entry key="W1" value="5.999068897284215" />
+    </decayedShown>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="3GZNaR61UKuyUp962xnmgNNYzp0" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Edit.executor": "Run",
+    "Application.Main.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "updateUI",
+    "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/javaBt/ManageStudent/ManageStudent",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/ADMIN/Desktop/OOP - Project/ManageStudent/ManageStudent/src/Main.java",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "to.speed.mode.migration.done": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.25134.95" />
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-IU-261.25134.95" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3ec332de-c8d5-4cf1-a9df-157596272734" name="Changes" comment="" />
+      <created>1784175193587</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1784175193587</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
