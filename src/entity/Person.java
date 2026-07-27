@@ -1,10 +1,9 @@
 package entity;
 
-public class Person {
+public abstract class Person {
     private String name;
-    private String yearOfBirth; // nam sinh de tim khoa hoc cua sinh vien dc ko??
+    private String yearOfBirth;
 
-    // Constructor
     public Person(String name, String yearOfBirth) {
         this.name = name;
         this.yearOfBirth = yearOfBirth;
@@ -12,7 +11,6 @@ public class Person {
 
     public Person() {}
 
-    // setter chinh Sua Ten va tuoi
     public void setName(String name) {
         this.name = name;
     }
@@ -21,7 +19,6 @@ public class Person {
         this.yearOfBirth = yearOfBirth;
     }
 
-    // getTen va getNamSinh
     public String getName() {
         return name;
     }
@@ -30,8 +27,6 @@ public class Person {
         return yearOfBirth;
     }
 
-    // getInfo 
-    public String getInfo() {
-        return name + " " + yearOfBirth;
-    }
+    // Mỗi loại Person tự quyết định cách hiển thị thông tin
+    public abstract String getInfo();
 }
