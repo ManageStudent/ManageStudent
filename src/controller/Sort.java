@@ -7,12 +7,13 @@ import java.util.ArrayList;
 
 public class Sort {
     private StudentModel model;
-    public void StudentController (StudentModel model) {
-        this.model = model;
+
+    public Sort(StudentModel sharedModel) {
+        this.model = sharedModel;
     }
 
-
     public void SortByName (StudentModel.Order order) {
+        
         model.SortNameList(order);
     }
 
@@ -28,7 +29,7 @@ public class Sort {
         model.SortClassID(order);
     }
 
-    public ArrayList<Student> getStudentList() {
-        return model.getStudentList();
+    public ArrayList<Student> GetStudentList() {
+        return model.GetStudentList();
     }
 }
