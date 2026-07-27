@@ -92,7 +92,15 @@ public class StudentModel {
 
     public void SortNameList (Order order) {
         studentList.sort((s1,s2) -> {
-            int result = s1.getName().compareToIgnoreCase(s2.getName());
+            String name1 = s1.getName().trim();
+            String name2 = s2.getName().trim();
+            String lastName1 = name1.substring(name1.lastIndexOf(" ") + 1);
+            String lastName2 = name2.substring(name2.lastIndexOf(" ") + 1);
+
+            int result = lastName1.compareToIgnoreCase(lastName2);
+            if (result == 0) {
+                result = name1.compareToIgnoreCase(name2);
+            }
             return order == Order.ASC ? result : -result;
         });
 

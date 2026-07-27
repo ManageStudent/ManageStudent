@@ -1,9 +1,6 @@
 package UI;
 
-import controller.EditData;
-import controller.Find;
-import controller.Show;
-import controller.UpdateData;
+import controller.*;
 import entity.Student;
 import entity.StudentModel;
 
@@ -19,6 +16,7 @@ public class StudentUI {
     private Find findController;
     private StudentModel sharedModel;
     private Show display;
+    private Sort sort;
 
     public StudentUI() {
         this.scanner = new Scanner(System.in);
@@ -28,6 +26,7 @@ public class StudentUI {
         this.editDataController = new EditData(this.sharedModel);
         this.findController = new Find(this.sharedModel);
         this.display = new Show(this.sharedModel);
+        this.sort = new Sort(this.sharedModel);
     }
 
     public void start() throws Exception {
@@ -50,7 +49,7 @@ public class StudentUI {
                     searchStudent();
                     break;
                 case 5:
-                    System.out.println("=> Sort feature is waiting for Controller to be completed.");
+                    SortMenu();
                     break;
                 case EXIT_CHOICE:
                     isRunning = false;
@@ -244,6 +243,57 @@ public class StudentUI {
             }
         } catch (Exception e) {
             System.out.println("=> Cannot search: " + e.getMessage());
+        }
+    }
+
+    //5. SORT FEATURE
+    private void displaySortedList() {
+        ArrayList<Student> students = sort.getStudentList();
+
+        if (students.isEmpty()) {
+            System.out.println("List have no students.");
+            return;
+        }
+
+        System.out.println("\n--- SORTED STUDENT ---");
+        System.out.printf("%-10s %-20s %-10s %-10s %-15s\n", "ID", "Name", "Year", "Class", "Accommodation");
+        System.out.println("---------------------------------------------------------------");
+
+        for (Student s : students) {
+            System.out.printf("%-10s %-20s %-10s %-10s %-15s\n",
+                    s.getId(), s.getName(), s.getYearOfBirth(), s.getClassId(), s.getAccommodation());
+        }
+    }
+
+    private void SortMenu() {
+        while (true) {
+            System.out.println("\n--- SORT STUDENT ---");
+            System.out.println("1. Sort by Name");
+            System.out.println("2. Sort by Student ID");
+            System.out.println("3. Sort by Year of Birth");
+            System.out.println("4. Sort by Class ID");
+            System.out.println("0. Exit");
+            System.out.print("Choose an option: ");
+            int choice = Integer.parseInt(scanner.nextLine());
+
+            if (choice == 0) {
+                System.out.println("Returning to main menu...");
+                break;
+            }
+
+            System.out.print("Sort order (ASC/DESC): ");
+            String orderInput = scanner.nextLine().trim().toUpperCase();
+            StudentModel.Order order = orderInput.equals("DESC") ? StudentModel.Order.DESC : StudentModel.Order.ASC;
+
+            switch (choice) {
+                case 1 -> sort.SortByName(order);
+                case 2 -> sort.SortByStudentID(order);
+                case 3 -> sort.SortByYearOfBirth(order);
+                case 4 -> sort.SortByClassID(order);
+                default -> System.out.println("Invalid choice!");
+            }
+
+            displaySortedList();
         }
     }
 }

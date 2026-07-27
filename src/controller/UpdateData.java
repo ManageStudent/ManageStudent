@@ -62,7 +62,7 @@ public class UpdateData {
 
         // Xử lý Accommodation
         String accToCheck = newStudent.getAccommodation().isEmpty() ? student.getAccommodation() : newStudent.getAccommodation();
-        if (!accToCheck.matches("^[a-zA-Z0-9]+$")) {
+        if (!accToCheck.matches("^[a-zA-Z0-9\\s]+$")) {
             errors.add("Accommodation must be alphanumeric.");
         } else {
             student.setAccommodation(accToCheck);

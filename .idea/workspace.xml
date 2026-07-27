@@ -5,17 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ec332de-c8d5-4cf1-a9df-157596272734" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI/StudentUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/StudentUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/Sort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/Sort.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/UpdateData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/UpdateData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entity/StudentModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/StudentModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/ManageStudent/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/ManageStudent/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../out/production/ManageStudent/UI/StudentUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/ManageStudent/UI/StudentUI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../out/production/ManageStudent/controller/EditData.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/ManageStudent/controller/EditData.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../out/production/ManageStudent/controller/Find.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/ManageStudent/controller/Find.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../out/production/ManageStudent/controller/Sort.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/ManageStudent/controller/Sort.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../out/production/ManageStudent/controller/UpdateData.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/ManageStudent/controller/UpdateData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/ManageStudent/entity/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/ManageStudent/entity/Person.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../out/production/ManageStudent/entity/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/ManageStudent/entity/Student.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../out/production/ManageStudent/entity/StudentModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/ManageStudent/entity/StudentModel.class" afterDir="false" />
     </list>
@@ -32,7 +35,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -127,11 +130,11 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "updateUI",
+    "git-widget-placeholder": "controller",
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/javaBt/ManageStudent/ManageStudent",
+    "last_opened_file_path": "C:/Users/ADMIN/Desktop/OOP - Project/ManageStudent/ManageStudent",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
