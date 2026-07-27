@@ -86,7 +86,7 @@ public class StudentModel {
         DESC // Descending
     }
 
-    public void SortNameList (Order order) {
+    public void sortNameList(Order order) {
         studentList.sort((s1,s2) -> {
             String name1 = s1.getName().trim();
             String name2 = s2.getName().trim();
@@ -102,33 +102,33 @@ public class StudentModel {
 
     }
 
-    public void SortStudentIDList (Order order) {
+    public void sortStudentIDList(Order order) {
         studentList.sort((s1, s2) -> {
             int result = s1.getId().compareToIgnoreCase(s2.getId());
             return order == Order.ASC ? result : -result;
         });
     }
 
-    public void SortYearOfBirthList (Order order) {
+    public void sortYearOfBirthList(Order order) {
         studentList.sort((s1, s2) -> {
             int result = s1.getYearOfBirth().compareToIgnoreCase(s2.getYearOfBirth());
             return order == Order.ASC ? result : -result;
         });
     }
 
-    public void SortClassID (Order order) {
+    public void sortClassID(Order order) {
         studentList.sort((s1, s2) -> {
             int result = s1.getClassId().compareToIgnoreCase(s2.getClassId());
             return order == Order.ASC ? result : -result;
         });
     }
 
-    public ArrayList<Student> GetStudentList() {
+    public ArrayList<Student> getStudentList() {
         return studentList;
     }
 
     // Model --> UpdateData.java
-    public Student FindOnlyStudentID (String studentID) {
+    public Student findOnlyStudentID(String studentID) {
         for (Student s : studentList) {
             if (s.getId().equals(studentID)) {
                 return s;
@@ -138,7 +138,7 @@ public class StudentModel {
     }
 
     // Model --> Show.java
-    public List<Student> GetAllStudents() {
+    public List<Student> getAllStudents() {
         return studentList;
     }
 

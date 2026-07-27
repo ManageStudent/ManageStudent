@@ -12,24 +12,24 @@ public class Sort {
         this.model = sharedModel;
     }
 
-    public void SortByName (StudentModel.Order order) {
+    public void sortByName(StudentModel.Order order) {
         
-        model.SortNameList(order);
+        model.sortNameList(order);
     }
 
-    public void SortByStudentID (StudentModel.Order order) {
-        model.SortStudentIDList(order);
+    public void sortByStudentID(StudentModel.Order order) {
+        model.sortStudentIDList(order);
     }
 
-    public void SortByYearOfBirth (StudentModel.Order order) {
-        model.SortYearOfBirthList(order);
+    public void sortByYearOfBirth(StudentModel.Order order) {
+        model.sortYearOfBirthList(order);
     }
 
-    public void SortByClassID (StudentModel.Order order) {
-        model.SortClassID(order);
+    public void sortByClassID(StudentModel.Order order) {
+        model.sortClassID(order);
     }
 
-    public ArrayList<Student> GetStudentList() {
-        return model.GetStudentList();
+    public ArrayList<Student> getStudentList() {
+        return model.getStudentList();
     }
 }

@@ -13,13 +13,13 @@ public class UpdateData {
     }
 
 
-    public Student FindStudent(String studentID) throws Exception {
-        Student student = model.FindOnlyStudentID(studentID);
+    public Student findStudent(String studentID) throws Exception {
+        Student student = model.findOnlyStudentID(studentID);
         if (student == null) throw new Exception("Student not found.");
         return student;
     }
-    public void UpdateStudent (String studentID, Student newStudent) throws Exception {
-        Student student = model.FindOnlyStudentID(studentID);
+    public void updateStudent(String studentID, Student newStudent) throws Exception {
+        Student student = model.findOnlyStudentID(studentID);
         ArrayList<String> errors = new ArrayList<>();
 
         String idToCheck = newStudent.getId().isEmpty() ? student.getId() : newStudent.getId();

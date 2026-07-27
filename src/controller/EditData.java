@@ -14,7 +14,7 @@ public class EditData {
         this.model = sharedModel;
     }
 
-    public void CheckStudent(String name, String yearOfbirth, String studentId, String classId, String residence) throws IllegalArgumentException {
+    public void checkStudent(String name, String yearOfbirth, String studentId, String classId, String residence) throws IllegalArgumentException {
         ArrayList<String> errors = new ArrayList<>();
 
         // Name
@@ -53,14 +53,14 @@ public class EditData {
         }
     }
 
-    public void AddStudent(Student student) throws Exception {
+    public void addStudent(Student student) throws Exception {
         if (model.isExistId(student.getId())) {
             throw new Exception("Student ID already exists.");
         }
         model.add(student);
     }
 
-    public void DeleteStudent(Student student) throws Exception {
+    public void deleteStudent(Student student) throws Exception {
         if (!model.isExistId(student.getId())) {
             throw new Exception("Student not found.");
         }
