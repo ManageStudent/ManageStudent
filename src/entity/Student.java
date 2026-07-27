@@ -43,11 +43,11 @@ public class Student extends Person {
     } 
 
     @Override
-public String getInfo() {
-    return "Name: " + getName()
-            + ", Year of birth: " + getYearOfBirth()
-            + ", Student ID: " + id
-            + ", Class ID: " + classId
-            + ", Accommodation: " + accommodation;
-}
+    public String getInfo() {
+        return "Name: " + getName()
+                + ", Year of birth: " + getYearOfBirth()
+                + ", Student ID: " + id
+                + ", Class ID: " + classId
+                + ", Accommodation: " + accommodation;
+    }
 }
