@@ -22,7 +22,7 @@ public class UpdateData {
         Student student = model.findOnlyStudentID(studentID);
         ArrayList<String> errors = new ArrayList<>();
 
-        String idToCheck = newStudent.getId().isEmpty() ? student.getId() : newStudent.getId();
+        String idToCheck = (newStudent.getId() == null || newStudent.getId().isEmpty()) ? student.getId() : newStudent.getId();
         if (!idToCheck.matches("^[0-9]+$")) {
             errors.add("Student ID contains numbers only.");
         } else if (!idToCheck.matches("\\d{8}")) {
@@ -34,7 +34,7 @@ public class UpdateData {
         }
 
         // Xử lý Name
-        String nameToCheck = newStudent.getName().isEmpty() ? student.getName() : newStudent.getName();
+        String nameToCheck = (newStudent.getName() == null || newStudent.getName().isEmpty()) ? student.getName() : newStudent.getName();
         if (!nameToCheck.matches("^[\\p{L}\\s]+$")) {
             errors.add("Name contains letters only.");
         } else {
@@ -42,7 +42,7 @@ public class UpdateData {
         }
 
         // Xử lý Year of Birth
-        String yobToCheck = newStudent.getYearOfBirth().isEmpty() ? student.getYearOfBirth() : newStudent.getYearOfBirth();
+        String yobToCheck = (newStudent.getYearOfBirth() == null || newStudent.getYearOfBirth().isEmpty()) ? student.getYearOfBirth() : newStudent.getYearOfBirth();
         if (!yobToCheck.matches("^\\d{4}$")) {
             errors.add("Year of Birth must be 4 digits.");
         } else if (!yobToCheck.matches("^[0-9]+$")) errors.add("Birth year contains numbers only.");
@@ -52,7 +52,7 @@ public class UpdateData {
         }
 
         // Xử lý Class ID
-        String classToCheck = newStudent.getClassId().isEmpty() ? student.getClassId() : newStudent.getClassId();
+        String classToCheck = (newStudent.getClassId() == null || newStudent.getClassId().isEmpty()) ? student.getClassId() : newStudent.getClassId();
         if (!classToCheck.matches("^[a-zA-Z0-9]+$")) {
             errors.add("Class ID must be alphanumeric.");
         } else {
@@ -60,8 +60,8 @@ public class UpdateData {
         }
 
         // Xử lý Accommodation
-        String accToCheck = newStudent.getAccommodation().isEmpty() ? student.getAccommodation() : newStudent.getAccommodation();
-        if (!accToCheck.matches("^[a-zA-Z0-9\\s]+$")) {
+        String accToCheck = (newStudent.getAccommodation() == null || newStudent.getAccommodation().isEmpty()) ? student.getAccommodation() : newStudent.getAccommodation();
+        if (!accToCheck.matches("^[a-zA-Z\\s]+$")) {
             errors.add("Accommodation must be alphanumeric.");
         } else {
             student.setAccommodation(accToCheck);

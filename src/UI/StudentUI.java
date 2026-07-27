@@ -231,30 +231,71 @@ public class StudentUI {
                 System.out.println("Student not found.");
                 return;
             }
-            else {
-                System.out.print("New ID (" + oldStudent.getId() + "): ");
+            while (true) {
+                System.out.print("New ID (" + oldStudent.getId() + ") (Enter to keep): ");
                 String idInput = scanner.nextLine();
                 newStudent.setId(idInput.isEmpty() ? oldStudent.getId() : idInput);
 
-                System.out.print("New name (" + oldStudent.getName() + "): ");
+                try {
+                    data.updateStudent(targetId, newStudent);
+                    break;
+                } catch (Exception e) {
+                    System.out.println("Errors: " + e.getMessage());
+                }
+            }
+
+            while (true) {
+                System.out.print("New name (" + oldStudent.getName() + ") (Enter to keep): ");
                 String nameInput = scanner.nextLine();
                 newStudent.setName(nameInput.isEmpty() ? oldStudent.getName() : nameInput);
 
-                System.out.print("New birth year (" + oldStudent.getYearOfBirth() + "): ");
+                try {
+                    data.updateStudent(targetId, newStudent);
+                    break;
+                } catch (Exception e) {
+                    System.out.println("Errors: " + e.getMessage());
+                }
+            }
+
+            while (true) {
+                System.out.print("New birth year (" + oldStudent.getYearOfBirth() + ") (Enter to keep): ");
                 String yobInput = scanner.nextLine();
                 newStudent.setYearOfBirth(yobInput.isEmpty() ? oldStudent.getYearOfBirth() : yobInput);
 
-                System.out.print("New class ID (" + oldStudent.getClassId() + "): ");
+                try {
+                    data.updateStudent(targetId, newStudent);
+                    break;
+                } catch (Exception e) {
+                    System.out.println("Errors: " + e.getMessage());
+                }
+            }
+
+            while (true) {
+                System.out.print("New class ID (" + oldStudent.getClassId() + ") (Enter to keep): ");
                 String classInput = scanner.nextLine();
                 newStudent.setClassId(classInput.isEmpty() ? oldStudent.getClassId() : classInput);
 
-                System.out.print("New accommodation (" + oldStudent.getAccommodation() + "): ");
+                try {
+                    data.updateStudent(targetId, newStudent);
+                    break;
+                } catch (Exception e) {
+                    System.out.println("Errors: " + e.getMessage());
+                }
+            }
+
+            while (true) {
+                System.out.print("New accommodation (" + oldStudent.getAccommodation() + ") (Enter to keep): ");
                 String accInput = scanner.nextLine();
                 newStudent.setAccommodation(accInput.isEmpty() ? oldStudent.getAccommodation() : accInput);
 
-                data.updateStudent(targetId, newStudent);
-                System.out.println("Update successful!");
+                try {
+                    data.updateStudent(targetId, newStudent);
+                    break;
+                } catch (Exception e) {
+                    System.out.println("Errors: " + e.getMessage());
+                }
             }
+            System.out.println("Update successful!");
         }
         catch (Exception e) {
             System.out.println("Detect error: " + e.getMessage());
