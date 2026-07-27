@@ -125,20 +125,54 @@ public class StudentUI {
     }
 
     // 1. ADD STUDENT FEATURE
-    private void inputStudentInfo() {
+    private void inputStudentInfo() throws Exception {
         System.out.println("\n--- ENTER STUDENT INFORMATION ---");
 
-        System.out.print("Enter full name: ");
-        String name = scanner.nextLine();
+        Student newStudent = new Student("", "","","","");
 
-        System.out.print("Enter year of birth (YYYY): ");
-        String yearOfBirthStr = scanner.nextLine();
+        while (true) {
+            System.out.print("Enter full name: ");
+            newStudent.setName(scanner.nextLine());
+            try {
+                editDataController.checkStudent(newStudent);
+                break;
+            } catch (Exception e) {
+                System.out.println("Error: " + e.getMessage() + ". Please try again.");
+            }
+        }
 
-        System.out.print("Enter student ID: ");
-        String id = scanner.nextLine();
+        while (true) {
+            System.out.print("Enter year of birth (YYYY): ");
+            newStudent.setYearOfBirth(scanner.nextLine());
+            try {
+                editDataController.checkStudent(newStudent);
+                break;
+            } catch (Exception e) {
+                System.out.println("Error: " + e.getMessage() + ". Please try again.");
+            }
+        }
 
-        System.out.print("Enter class ID: ");
-        String classId = scanner.nextLine();
+        while (true) {
+            System.out.print("Enter student ID: ");
+            newStudent.setId(scanner.nextLine());
+            try {
+                editDataController.checkStudent(newStudent);
+                break;
+            } catch (Exception e) {
+                System.out.println("Error: " + e.getMessage() + ". Please try again.");
+            }
+        }
+
+        while (true) {
+            System.out.print("Enter class ID: ");
+            newStudent.setClassId(scanner.nextLine());
+            try {
+                editDataController.checkStudent(newStudent);
+                break;
+            } catch (Exception e) {
+                System.out.println("Error: " + e.getMessage() + ". Please try again.");
+            }
+        }
 
         int accommodationChoice = -1;
         while (accommodationChoice != 1 && accommodationChoice != 2) {
@@ -148,20 +182,10 @@ public class StudentUI {
             }
         }
         String accommodation = (accommodationChoice == 1) ? "Dormitory" : "Rented House";
+        newStudent.setAccommodation(accommodation);
 
-        System.out.println("\n[SYSTEM] Checking and saving data...");
-
-        try {
-            editDataController.checkStudent(name, yearOfBirthStr, id, classId, accommodation);
-
-            Student newStudent = new Student(name, yearOfBirthStr, id, classId, accommodation);
-
-            editDataController.addStudent(newStudent);
-            System.out.println("=> ADD STUDENT SUCCESSFULLY!");
-
-        } catch (Exception e) {
-            System.out.println("=> FAILED. Invalid data:\n" + e.getMessage());
-        }
+        editDataController.addStudent(newStudent);
+        System.out.println("=> ADD STUDENT SUCCESSFULLY!");
     }
 
     // 2. DELETE FEATURE
