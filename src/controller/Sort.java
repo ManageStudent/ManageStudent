@@ -29,7 +29,7 @@ public class Sort {
         model.SortClassID(order);
     }
 
-    public ArrayList<Student> getStudentList() {
-        return model.getStudentList();
+    public ArrayList<Student> GetStudentList() {
+        return model.GetStudentList();
     }
 }

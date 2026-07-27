@@ -5,7 +5,6 @@ import entity.StudentModel;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class UpdateData {
     private StudentModel model = new StudentModel();
@@ -14,7 +13,7 @@ public class UpdateData {
     }
 
 
-    public Student findStudent (String studentID) throws Exception {
+    public Student FindStudent(String studentID) throws Exception {
         Student student = model.FindOnlyStudentID(studentID);
         if (student == null) throw new Exception("Student not found.");
         return student;
