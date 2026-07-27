@@ -7,11 +7,9 @@
     <list default="true" id="3ec332de-c8d5-4cf1-a9df-157596272734" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI/StudentUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/StudentUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/UpdateData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/UpdateData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/students.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/EditData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/EditData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../out/production/ManageStudent/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/ManageStudent/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../out/production/ManageStudent/UI/StudentUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/ManageStudent/UI/StudentUI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../out/production/ManageStudent/controller/EditData.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/ManageStudent/controller/EditData.class" afterDir="false" />

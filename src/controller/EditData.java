@@ -14,38 +14,53 @@ public class EditData {
         this.model = sharedModel;
     }
 
-    public void checkStudent(String name, String yearOfbirth, String studentId, String classId, String residence) throws IllegalArgumentException {
+    public void checkStudent(Student student) throws IllegalArgumentException {
         ArrayList<String> errors = new ArrayList<>();
 
         // Name
-        if (name == null || name.isEmpty()) errors.add("Name is required.");
-        else if (!name.matches("^[a-zA-Z\\s]+$")) errors.add("Name must contain only letters.");
+        if (student.getName() != null && !student.getName().isEmpty()) {
+            if (!student.getName().matches("^[a-zA-Z\\s]+$")) {
+                errors.add("Name must contain only letters.");
+            }
+        }
 
         // YearOfBirth
-        if (yearOfbirth.length() != 4 || Integer.parseInt(yearOfbirth) > LocalDate.now().getYear() || Integer.parseInt(yearOfbirth) < (LocalDate.now().getYear() - 100))
-            errors.add("Invalid birth year.");
-        else {
-            if (yearOfbirth.isEmpty() || yearOfbirth == null) errors.add("Year of birth is required.");
-            if (!yearOfbirth.matches("^[0-9]+$")) errors.add("Birth year must contain only digits.");
+        if (student.getYearOfBirth() != null && !student.getYearOfBirth().isEmpty()) {
+            if (!student.getYearOfBirth().matches("^[0-9]+$")) {
+                errors.add("Birth year must contain only numbers.");
+            } else {
+                int year = Integer.parseInt(student.getYearOfBirth());
+                int currentYear = LocalDate.now().getYear();
+                if (student.getYearOfBirth().length() != 4 ||
+                        year > currentYear ||
+                        year < currentYear - 100) {
+                    errors.add("Invalid birth year.");
+                }
+            }
         }
 
         // StudentID
-        if (studentId.isEmpty() || studentId == null) errors.add("ID is required.");
-        else {
-            if (!studentId.matches("\\d+")) errors.add("Invalid student ID.");
-            if (studentId.length() != 8) errors.add("Student ID must be 8 digits.");
+        if (student.getId() != null && !student.getId().isEmpty()) {
+            if (!student.getId().matches("\\d+")) {
+                errors.add("Invalid student ID.");
+            } else if (student.getId().length() != 8) {
+                errors.add("Student ID must be 8 digits.");
+            }
         }
 
-
         // ClassID
-        if (classId.isEmpty() || classId == null) errors.add("Class ID is required.");
-        else if (!classId.matches("^[A-Z0-9]+$"))
-            errors.add("Class ID must contain only uppercase letters and digits.");
+        if (student.getClassId() != null && !student.getClassId().isEmpty()) {
+            if (!student.getClassId().matches("^[A-Z0-9]+$")) {
+                errors.add("Class ID must contain only uppercase letters and digits.");
+            }
+        }
 
         // Accommodation
-        if (residence == null || residence.isEmpty()) errors.add("Residence is required.");
-        else if (!residence.matches("^[a-zA-Z0-9\\s]+$"))
-            errors.add("Address can only contain letters and numbers.");
+        if (student.getAccommodation() != null && !student.getAccommodation().isEmpty()) {
+            if (!student.getAccommodation().matches("^[a-zA-Z0-9\\s]+$")) {
+                errors.add("Address can only contain letters and numbers.");
+            }
+        }
 
         // Return errors
         if (!errors.isEmpty()) {
