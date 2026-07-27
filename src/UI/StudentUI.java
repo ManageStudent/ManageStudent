@@ -59,7 +59,7 @@ public class StudentUI {
                     System.out.println("Exited program. Goodbye!");
                     break;
                 default:
-                    System.out.println("Invalid choice! Please try again.");
+                    System.out.println("Error: Invalid choice! Please choose an option from 1 to 6.");
             }
         }
     }
@@ -127,12 +127,16 @@ public class StudentUI {
     // 1. ADD STUDENT FEATURE
     private void inputStudentInfo() throws Exception {
         System.out.println("\n--- ENTER STUDENT INFORMATION ---");
-
         Student newStudent = new Student("", "","","","");
 
         while (true) {
             System.out.print("Enter full name: ");
-            newStudent.setName(scanner.nextLine());
+            String input = scanner.nextLine();
+            if (input.trim().isEmpty()) {
+                System.out.println("Error: Name cannot be empty. Please try again.");
+                continue;
+            }
+            newStudent.setName(input);
             try {
                 editDataController.checkStudent(newStudent);
                 break;
@@ -143,7 +147,12 @@ public class StudentUI {
 
         while (true) {
             System.out.print("Enter year of birth (YYYY): ");
-            newStudent.setYearOfBirth(scanner.nextLine());
+            String input = scanner.nextLine();
+            if (input.trim().isEmpty()) {
+                System.out.println("Error: Year of birth cannot be empty. Please try again.");
+                continue;
+            }
+            newStudent.setYearOfBirth(input);
             try {
                 editDataController.checkStudent(newStudent);
                 break;
@@ -154,7 +163,16 @@ public class StudentUI {
 
         while (true) {
             System.out.print("Enter student ID: ");
-            newStudent.setId(scanner.nextLine());
+            String input = scanner.nextLine();
+            if (input.trim().isEmpty()) {
+                System.out.println("Error: Student ID cannot be empty. Please try again.");
+                continue;
+            }
+            if (sharedModel.isExistId(input)) {
+                System.out.println("Error: Student ID already exists. Please try again.");
+                continue;
+            }
+            newStudent.setId(input);
             try {
                 editDataController.checkStudent(newStudent);
                 break;
@@ -165,7 +183,12 @@ public class StudentUI {
 
         while (true) {
             System.out.print("Enter class ID: ");
-            newStudent.setClassId(scanner.nextLine());
+            String input = scanner.nextLine();
+            if (input.trim().isEmpty()) {
+                System.out.println("Error: Class ID cannot be empty. Please try again.");
+                continue;
+            }
+            newStudent.setClassId(input);
             try {
                 editDataController.checkStudent(newStudent);
                 break;
@@ -241,89 +264,187 @@ public class StudentUI {
     }
 
     // 4. UPDATE INFORMATION FEATURE
-    private void updateStudentInfo() throws Exception {
-
+    private void updateStudentInfo() {
         System.out.println("\n--- UPDATE STUDENT INFORMATION ---");
-        System.out.print("Enter student ID to edit: ");
+        System.out.print("Enter student ID to edit (type '0' to cancel): ");
         String targetId = scanner.nextLine();
-        try {
-            StudentModel model = new StudentModel();
-            UpdateData data = new UpdateData(model);
-            Student oldStudent = data.findStudent(targetId);
-            Student newStudent = new Student();
-            if (oldStudent == null) {
-                System.out.println("Student not found.");
-                return;
-            }
-            while (true) {
-                System.out.print("New ID (" + oldStudent.getId() + ") (Enter to keep): ");
-                String idInput = scanner.nextLine();
-                newStudent.setId(idInput.isEmpty() ? oldStudent.getId() : idInput);
 
-                try {
-                    data.updateStudent(targetId, newStudent);
-                    break;
-                } catch (Exception e) {
-                    System.out.println("Errors: " + e.getMessage());
-                }
-            }
-
-            while (true) {
-                System.out.print("New name (" + oldStudent.getName() + ") (Enter to keep): ");
-                String nameInput = scanner.nextLine();
-                newStudent.setName(nameInput.isEmpty() ? oldStudent.getName() : nameInput);
-
-                try {
-                    data.updateStudent(targetId, newStudent);
-                    break;
-                } catch (Exception e) {
-                    System.out.println("Errors: " + e.getMessage());
-                }
-            }
-
-            while (true) {
-                System.out.print("New birth year (" + oldStudent.getYearOfBirth() + ") (Enter to keep): ");
-                String yobInput = scanner.nextLine();
-                newStudent.setYearOfBirth(yobInput.isEmpty() ? oldStudent.getYearOfBirth() : yobInput);
-
-                try {
-                    data.updateStudent(targetId, newStudent);
-                    break;
-                } catch (Exception e) {
-                    System.out.println("Errors: " + e.getMessage());
-                }
-            }
-
-            while (true) {
-                System.out.print("New class ID (" + oldStudent.getClassId() + ") (Enter to keep): ");
-                String classInput = scanner.nextLine();
-                newStudent.setClassId(classInput.isEmpty() ? oldStudent.getClassId() : classInput);
-
-                try {
-                    data.updateStudent(targetId, newStudent);
-                    break;
-                } catch (Exception e) {
-                    System.out.println("Errors: " + e.getMessage());
-                }
-            }
-
-            while (true) {
-                System.out.print("New accommodation (" + oldStudent.getAccommodation() + ") (Enter to keep): ");
-                String accInput = scanner.nextLine();
-                newStudent.setAccommodation(accInput.isEmpty() ? oldStudent.getAccommodation() : accInput);
-
-                try {
-                    data.updateStudent(targetId, newStudent);
-                    break;
-                } catch (Exception e) {
-                    System.out.println("Errors: " + e.getMessage());
-                }
-            }
-            System.out.println("Update successful!");
-        }
-        catch (Exception e) {
-            System.out.println("Detect error: " + e.getMessage());
+        if (targetId.equals("0")) {
+            System.out.println("Update canceled.");
             return;
+        }
+
+        try {
+            UpdateData data = new UpdateData(this.sharedModel);
+            Student oldStudent = data.findStudent(targetId);
+
+            boolean isUpdating = true;
+            while (isUpdating) {
+                System.out.println("\n--- SELECT FIELD TO UPDATE ---");
+                System.out.println("1. Name (" + oldStudent.getName() + ")");
+                System.out.println("2. Year of Birth (" + oldStudent.getYearOfBirth() + ")");
+                System.out.println("3. Student ID (" + oldStudent.getId() + ")");
+                System.out.println("4. Class ID (" + oldStudent.getClassId() + ")");
+                System.out.println("5. Residence (" + oldStudent.getAccommodation() + ")");
+                System.out.println("0. Finish & Go Back");
+
+                int choice = getIntInput("Enter choice: ");
+
+                if (choice == 0) {
+                    System.out.println("Finished updating.");
+                    isUpdating = false;
+                    continue;
+                }
+
+                Student updateAttempt = new Student();
+
+                switch (choice) {
+                    case 1:
+                        while (true) {
+                            System.out.print("New name (type '0' to cancel): ");
+                            String input = scanner.nextLine();
+                            if (input.equals("0")) break;
+
+                            if (input.trim().isEmpty()) {
+                                System.out.println("Error: Name cannot be empty. Please try again.");
+                                continue;
+                            }
+
+                            if (input.trim().replaceAll("\\s+", " ").equalsIgnoreCase(oldStudent.getName())) {
+                                System.out.println("Error: The new value must be different from the current value. Please try again.");
+                                continue;
+                            }
+
+                            updateAttempt.setName(input);
+                            try {
+                                data.updateStudent(oldStudent.getId(), updateAttempt);
+                                System.out.println("Name updated successfully!");
+                                break;
+                            } catch (Exception e) {
+                                System.out.println("Error: " + e.getMessage());
+                            }
+                        }
+                        break;
+
+                    case 2:
+                        while (true) {
+                            System.out.print("New birth year (type '0' to cancel): ");
+                            String input = scanner.nextLine();
+                            if (input.equals("0")) break;
+
+                            if (input.trim().isEmpty()) {
+                                System.out.println("Error: Year of birth cannot be empty. Please try again.");
+                                continue;
+                            }
+
+                            if (input.equals(oldStudent.getYearOfBirth())) {
+                                System.out.println("Error: The new value must be different from the current value. Please try again.");
+                                continue;
+                            }
+
+                            updateAttempt.setYearOfBirth(input);
+                            try {
+                                data.updateStudent(oldStudent.getId(), updateAttempt);
+                                System.out.println("Year of birth updated successfully!");
+                                break;
+                            } catch (Exception e) {
+                                System.out.println("Error: " + e.getMessage());
+                            }
+                        }
+                        break;
+
+                    case 3:
+                        while (true) {
+                            System.out.print("New student ID (type '0' to cancel): ");
+                            String input = scanner.nextLine();
+                            if (input.equals("0")) break;
+
+                            if (input.trim().isEmpty()) {
+                                System.out.println("Error: Student ID cannot be empty. Please try again.");
+                                continue;
+                            }
+
+                            if (input.equals(oldStudent.getId())) {
+                                System.out.println("Error: The new value must be different from the current value. Please try again.");
+                                continue;
+                            }
+
+                            if (sharedModel.isExistId(input) && !input.equals(oldStudent.getId())) {
+                                System.out.println("Error: Student ID already exists. Please try again.");
+                                continue;
+                            }
+
+                            updateAttempt.setId(input);
+                            try {
+                                data.updateStudent(oldStudent.getId(), updateAttempt);
+                                System.out.println("Student ID updated successfully!");
+                                targetId = input;
+                                oldStudent = data.findStudent(targetId);
+                                break;
+                            } catch (Exception e) {
+                                System.out.println("Error: " + e.getMessage());
+                            }
+                        }
+                        break;
+
+                    case 4:
+                        while (true) {
+                            System.out.print("New class ID (type '0' to cancel): ");
+                            String input = scanner.nextLine();
+                            if (input.equals("0")) break;
+
+                            if (input.trim().isEmpty()) {
+                                System.out.println("Error: Class ID cannot be empty. Please try again.");
+                                continue;
+                            }
+
+                            if (input.equalsIgnoreCase(oldStudent.getClassId())) {
+                                System.out.println("Error: The new value must be different from the current value. Please try again.");
+                                continue;
+                            }
+
+                            updateAttempt.setClassId(input);
+                            try {
+                                data.updateStudent(oldStudent.getId(), updateAttempt);
+                                System.out.println("Class ID updated successfully!");
+                                break;
+                            } catch (Exception e) {
+                                System.out.println("Error: " + e.getMessage());
+                            }
+                        }
+                        break;
+
+                    case 5:
+                        while (true) {
+                            String currentRes = oldStudent.getAccommodation();
+                            String targetRes = currentRes.equalsIgnoreCase("Dormitory") ? "Rented House" : "Dormitory";
+
+                            int accChoice = getIntInput("Current residence is '" + currentRes + "'. Change to '" + targetRes + "'? (1 - Yes, 0 - Cancel): ");
+
+                            if (accChoice == 0) break;
+
+                            if (accChoice == 1) {
+                                updateAttempt.setAccommodation(targetRes);
+                                try {
+                                    data.updateStudent(oldStudent.getId(), updateAttempt);
+                                    System.out.println("Residence updated successfully!");
+                                    break;
+                                } catch (Exception e) {
+                                    System.out.println("Error: " + e.getMessage());
+                                }
+                            } else {
+                                System.out.println("Invalid choice. Please choose 1 (Yes) or 0 (Cancel).");
+                            }
+                        }
+                        break;
+
+                    default:
+                        System.out.println("Error: Invalid choice! Please choose an option from 1 to 5.");
+                        break;
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Detect error: " + e.getMessage());
         }
     }
 
@@ -369,7 +490,7 @@ public class StudentUI {
                         results = findController.findByAccommodation(keyword);
                         break;
                     default:
-                        System.out.println("Invalid choice.");
+                        System.out.println("Error: Invalid choice! Please choose an option from 1 to 5.");
                         return;
                 }
 
@@ -412,6 +533,11 @@ public class StudentUI {
                 break;
             }
 
+            if (choice < 1 || choice > 4) {
+                System.out.println("Error: Invalid choice! Please choose an option from 1 to 4.");
+                continue;
+            }
+
             System.out.print("Sort order (ASC/DESC): ");
             String orderInput = scanner.nextLine().trim().toUpperCase();
             StudentModel.Order order = orderInput.equals("DESC") ? StudentModel.Order.DESC : StudentModel.Order.ASC;
@@ -421,7 +547,6 @@ public class StudentUI {
                 case 2 -> sort.sortByStudentID(order);
                 case 3 -> sort.sortByYearOfBirth(order);
                 case 4 -> sort.sortByClassID(order);
-                default -> System.out.println("Invalid choice!");
             }
 
             displaySortedList();

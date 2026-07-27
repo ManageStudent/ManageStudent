@@ -5,20 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ec332de-c8d5-4cf1-a9df-157596272734" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI/StudentUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/StudentUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/EditData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/EditData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/ManageStudent/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/ManageStudent/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/ManageStudent/UI/StudentUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/ManageStudent/UI/StudentUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/ManageStudent/controller/EditData.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/ManageStudent/controller/EditData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/ManageStudent/controller/Find.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/ManageStudent/controller/Find.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/ManageStudent/controller/Sort.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/ManageStudent/controller/Sort.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/ManageStudent/controller/UpdateData.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/ManageStudent/controller/UpdateData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/ManageStudent/entity/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/ManageStudent/entity/Person.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/ManageStudent/entity/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/ManageStudent/entity/Student.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/ManageStudent/entity/StudentModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/ManageStudent/entity/StudentModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/UpdateData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/UpdateData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/students.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/students.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,61 +40,61 @@
 }</component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.7649469401255566E-10" />
-      <entry key="MS500" value="0.017952510549860703" />
-      <entry key="S2" value="1.5687037649828661" />
-      <entry key="S5" value="5.61547948209209" />
-      <entry key="S10" value="10.720325299003989" />
-      <entry key="S30" value="19.95710437863323" />
-      <entry key="S60" value="25.902514666801764" />
-      <entry key="M2" value="33.84737721826785" />
-      <entry key="M5" value="53.248044742096894" />
-      <entry key="M10" value="88.2202371884302" />
-      <entry key="M15" value="118.46059117250424" />
-      <entry key="M30" value="173.20737670944266" />
-      <entry key="H1" value="216.57339934180777" />
-      <entry key="H2" value="244.2323597948286" />
-      <entry key="H4" value="259.9139963985133" />
-      <entry key="D1" value="274.04878744259696" />
-      <entry key="W1" value="276.575779235465" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0" />
+      <entry key="S5" value="1.0" />
+      <entry key="S10" value="1.0" />
+      <entry key="S30" value="1.0" />
+      <entry key="S60" value="1.0000000000000002" />
+      <entry key="M2" value="1.0000001568254266" />
+      <entry key="M5" value="1.0345665002279851" />
+      <entry key="M10" value="3.5758932645934305" />
+      <entry key="M15" value="12.947817530794447" />
+      <entry key="M30" value="61.215944278492884" />
+      <entry key="H1" value="141.31034117225363" />
+      <entry key="H2" value="217.36441049285986" />
+      <entry key="H4" value="270.38587955201183" />
+      <entry key="D1" value="324.8104544764521" />
+      <entry key="W1" value="335.22990849407216" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="1.0000640696218033" />
-      <entry key="MS500" value="1.1449874568131793" />
-      <entry key="S2" value="1.6170674071167714" />
-      <entry key="S5" value="1.824390622884065" />
-      <entry key="S10" value="1.9079595981169986" />
-      <entry key="S30" value="1.9700295458989916" />
-      <entry key="S60" value="2.027593797260966" />
-      <entry key="M2" value="2.2803210635842017" />
-      <entry key="M5" value="3.398071408776833" />
-      <entry key="M10" value="4.956532749902477" />
-      <entry key="M15" value="6.0076309709857725" />
-      <entry key="M30" value="7.710868473889271" />
-      <entry key="H1" value="9.0395167834185" />
-      <entry key="H2" value="9.915101009425868" />
-      <entry key="H4" value="10.42699627316136" />
-      <entry key="D1" value="10.899808425605727" />
-      <entry key="W1" value="10.985565613502159" />
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="9.660796063729685E-209" />
+      <entry key="S10" value="1.4301196315210883E-104" />
+      <entry key="S30" value="5.003906415602739E-35" />
+      <entry key="S60" value="1.3716539272331664E-17" />
+      <entry key="M2" value="7.75409281857293E-9" />
+      <entry key="M5" value="0.0016963397654464376" />
+      <entry key="M10" value="0.12267828483110599" />
+      <entry key="M15" value="0.5416937192977856" />
+      <entry key="M30" value="2.5234886946251174" />
+      <entry key="H1" value="5.626197555312545" />
+      <entry key="H2" value="8.505536249198133" />
+      <entry key="H4" value="10.499310523678151" />
+      <entry key="D1" value="12.542419328833308" />
+      <entry key="W1" value="12.933548922025087" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.022405553497188466" />
-      <entry key="MS500" value="0.5046586413918008" />
-      <entry key="S2" value="2.7600155981353836" />
-      <entry key="S5" value="7.204604319668813" />
-      <entry key="S10" value="12.493271764345725" />
-      <entry key="S30" value="21.875340240607958" />
-      <entry key="S60" value="27.895418974532582" />
-      <entry key="M2" value="36.09443345552699" />
-      <entry key="M5" value="56.61817623274995" />
-      <entry key="M10" value="93.15652300704643" />
-      <entry key="M15" value="124.4523394627592" />
-      <entry key="M30" value="180.90847645289188" />
-      <entry key="H1" value="225.60732623367414" />
-      <entry key="H2" value="254.14443172798025" />
-      <entry key="H4" value="270.3394092582682" />
-      <entry key="D1" value="284.94832131383924" />
-      <entry key="W1" value="287.56130535019" />
+      <entry key="MS100" value="9.615919103886198E-8" />
+      <entry key="MS500" value="0.03950009682665021" />
+      <entry key="S2" value="0.44580972705543737" />
+      <entry key="S5" value="0.7238687297199397" />
+      <entry key="S10" value="0.8508047541709788" />
+      <entry key="S30" value="0.9475670911512086" />
+      <entry key="S60" value="0.973430578496078" />
+      <entry key="M2" value="0.9866260198788717" />
+      <entry key="M5" value="1.0308815600781354" />
+      <entry key="M10" value="3.695487265392456" />
+      <entry key="M15" value="13.486542249626847" />
+      <entry key="M30" value="63.73579580065189" />
+      <entry key="H1" value="146.93303999469126" />
+      <entry key="H2" value="225.86741790719475" />
+      <entry key="H4" value="280.88365558328434" />
+      <entry key="D1" value="337.3525718898219" />
+      <entry key="W1" value="348.16341302200794" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -117,36 +108,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Edit.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;controller&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ADMIN/Desktop/OOP - Project/ManageStudent/ManageStudent&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/ADMIN/Desktop/OOP - Project/ManageStudent/ManageStudent/src/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Edit.executor": "Run",
+    "Application.Main.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "FixFile",
+    "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/ADMIN/Desktop/OOP - Project/ManageStudent/ManageStudent",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/ADMIN/Desktop/OOP - Project/ManageStudent/ManageStudent/src/Main.java",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "to.speed.mode.migration.done": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
