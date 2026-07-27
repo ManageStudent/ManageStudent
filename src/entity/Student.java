@@ -5,6 +5,10 @@ public class Student extends Person {
     private String classId;
     private String accommodation;
 
+    public Student () {
+        super();
+    }
+
     public Student(String name, String yearOfBirth, String id, String classId, String accommodation) {
         super(name, yearOfBirth);
         this.id = id;

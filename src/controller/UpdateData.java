@@ -23,34 +23,54 @@ public class UpdateData {
         Student student = model.FindOnlyStudentID(studentID);
         ArrayList<String> errors = new ArrayList<>();
 
-        if (!newStudent.getId().isEmpty()) {
-            if (!newStudent.getId().matches("^[0-9]+$")) errors.add("Student ID contains numbers only.");
-            else if (!newStudent.getId().matches("\\d{8}")) errors.add("Student ID must contain 8 digits.");
-            else if (!newStudent.getId().equals(student.getId()) && model.isExistId(newStudent.getId())) errors.add("Student ID already exists.");
+        String idToCheck = newStudent.getId().isEmpty() ? student.getId() : newStudent.getId();
+        if (!idToCheck.matches("^[0-9]+$")) {
+            errors.add("Student ID contains numbers only.");
+        } else if (!idToCheck.matches("\\d{8}")) {
+            errors.add("Student ID must contain 8 digits.");
+        } else if (!idToCheck.equals(student.getId()) && model.isExistId(newStudent.getId())) {
+            errors.add("Student ID already exists.");
+        } else {
+            student.setId(idToCheck);
         }
 
-        if (!newStudent.getName().isEmpty()) {
-            if (!newStudent.getName().matches("^[a-zA-Z\\s]")) errors.add("Name contains letters only.");
+        // Xử lý Name
+        String nameToCheck = newStudent.getName().isEmpty() ? student.getName() : newStudent.getName();
+        if (!nameToCheck.matches("^[\\p{L}\\s]+$")) {
+            errors.add("Name contains letters only.");
+        } else {
+            student.setName(nameToCheck);
         }
 
-        if (!newStudent.getYearOfBirth().isEmpty()) {
-            if (!newStudent.getYearOfBirth().matches("\\d{4}")) errors.add("Birth year must contain 4 digits.");
-            else if (!newStudent.getYearOfBirth().matches("^[0-9]+$")) errors.add("Birth year contains numbers only.");
-            else if (Integer.parseInt(newStudent.getYearOfBirth()) > LocalDate.now().getYear() || Integer.parseInt(newStudent.getYearOfBirth()) < (LocalDate.now().getYear() - 100))
-                errors.add("Invalid birth year.");
+        // Xử lý Year of Birth
+        String yobToCheck = newStudent.getYearOfBirth().isEmpty() ? student.getYearOfBirth() : newStudent.getYearOfBirth();
+        if (!yobToCheck.matches("^\\d{4}$")) {
+            errors.add("Year of Birth must be 4 digits.");
+        } else if (!yobToCheck.matches("^[0-9]+$")) errors.add("Birth year contains numbers only.");
+        else if (Integer.parseInt(yobToCheck) > LocalDate.now().getYear() || Integer.parseInt(yobToCheck) < (LocalDate.now().getYear() - 100)) errors.add("Invalid birth year.");
+        else {
+            student.setYearOfBirth(yobToCheck);
         }
 
-        if (!newStudent.getClassId().isEmpty()) {
-            if (!newStudent.getClassId().matches("^[a-zA-Z0-9]+$")) errors.add("Class ID contains letters and numbers.");
+        // Xử lý Class ID
+        String classToCheck = newStudent.getClassId().isEmpty() ? student.getClassId() : newStudent.getClassId();
+        if (!classToCheck.matches("^[a-zA-Z0-9]+$")) {
+            errors.add("Class ID must be alphanumeric.");
+        } else {
+            student.setClassId(classToCheck);
         }
 
-        if (!errors.isEmpty()) throw new IllegalArgumentException(String.join("\n", errors));
+        // Xử lý Accommodation
+        String accToCheck = newStudent.getAccommodation().isEmpty() ? student.getAccommodation() : newStudent.getAccommodation();
+        if (!accToCheck.matches("^[a-zA-Z0-9]+$")) {
+            errors.add("Accommodation must be alphanumeric.");
+        } else {
+            student.setAccommodation(accToCheck);
+        }
 
-        // Update
-        if (!newStudent.getId().isEmpty()) student.setId(newStudent.getId());
-        if (!newStudent.getName().isEmpty()) student.setName(newStudent.getName());
-        if (!newStudent.getYearOfBirth().isEmpty()) student.setYearOfBirth(newStudent.getYearOfBirth());
-        if (!newStudent.getClassId().isEmpty()) student.setClassId(newStudent.getClassId());
-        if (!newStudent.getAccommodation().isEmpty()) student.setAccommodation(newStudent.getAccommodation());
+        // Nếu có lỗi thì ném exception
+        if (!errors.isEmpty()) {
+            throw new Exception(String.join("\n", errors));
+        }
     }
 }

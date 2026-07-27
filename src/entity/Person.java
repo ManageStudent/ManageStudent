@@ -10,6 +10,8 @@ public class Person {
         this.yearOfBirth = yearOfBirth;
     }
 
+    public Person() {}
+
     // setter chinh Sua Ten va tuoi
     public void setName(String name) {
         this.name = name;
