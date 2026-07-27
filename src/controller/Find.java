@@ -13,7 +13,7 @@ public class Find {
         this.model = sharedModel;
     }
 
-    public ArrayList<Student> FindByName(String keyword) throws Exception {
+    public ArrayList<Student> findByName(String keyword) throws Exception {
         ArrayList<String> errors = new ArrayList();
         ArrayList<Student> result = model.isExistNameList(keyword);
         if (keyword == null || keyword.isEmpty()) errors.add("Keyword is required.");
@@ -22,7 +22,7 @@ public class Find {
         }else if (keyword.length() < 2) {
             errors.add("Keyword must be at least 2 letters long.");
         } else {
-            for (Student s : model.GetStudentList()) {
+            for (Student s : model.getStudentList()) {
                 String[] words = s.getName().split("\\s+");
                 for (String word : words) {
                     if (word.equalsIgnoreCase(keyword)) {
@@ -38,7 +38,7 @@ public class Find {
         return result;
     }
 
-    public ArrayList<Student> FindByStudentId (String number) throws Exception {
+    public ArrayList<Student> findByStudentId(String number) throws Exception {
         ArrayList<String> errors = new ArrayList<>();
         ArrayList<Student> result = model.isExistIdList(number);
         if (number== null || number.isEmpty()) errors.add("Student ID is required.");
@@ -51,7 +51,7 @@ public class Find {
         return result;
     }
 
-    public ArrayList<Student> FindByYearOfBirth (String number) throws Exception {
+    public ArrayList<Student> findByYearOfBirth(String number) throws Exception {
         ArrayList<String> errors = new ArrayList<>();
         ArrayList<Student> result = model.isExistYearOfBirthList(number);
         if (number == null || number.isEmpty()) errors.add("Year of birth is required.");
@@ -64,7 +64,7 @@ public class Find {
         return result;
     }
 
-    public ArrayList<Student> FindByClassID (String keyword) throws Exception {
+    public ArrayList<Student> findByClassID(String keyword) throws Exception {
         ArrayList<String> errors = new ArrayList<>();
         ArrayList<Student> result = model.isExistClassID(keyword);
         if (keyword == null || keyword.isEmpty()) errors.add("ClassID is required.");
@@ -76,7 +76,7 @@ public class Find {
         return result;
     }
 
-    public ArrayList<Student> FindByAccommodation (String keyword) throws Exception {
+    public ArrayList<Student> findByAccommodation(String keyword) throws Exception {
         ArrayList<String> errors = new ArrayList<>();
         ArrayList<Student> result = model.isExistAccommodationList(keyword);
         if (keyword == null || keyword.isEmpty()) errors.add("Accommodation is required.");

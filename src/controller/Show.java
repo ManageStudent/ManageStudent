@@ -11,7 +11,7 @@ public class Show {
     public Show(StudentModel model) {
         this.model = model;
     }
-    public List<Student> GetAllStudents() {
-        return model.GetAllStudents();
+    public List<Student> getAllStudents() {
+        return model.getAllStudents();
     }
 }

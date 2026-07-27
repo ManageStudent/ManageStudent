@@ -30,27 +30,27 @@ public class StudentUI {
     public void start() throws Exception {
         boolean isRunning = true;
         while (isRunning) {
-            DisplayMenu();
-            int userChoice = GetIntInput("Enter your choice: ");
+            displayMenu();
+            int userChoice = getIntInput("Enter your choice: ");
 
             switch (userChoice) {
                 case 1:
-                    InputStudentInfo();
+                    inputStudentInfo();
                     break;
                 case 2:
-                    DeleteStudent();
+                    deleteStudent();
                     break;
                 case 3:
-                    DisplayStudentList();
+                    displayStudentList();
                     break;
                 case 4:
-                    UpdateStudentInfo();
+                    updateStudentInfo();
                     break;
                 case 5:
-                    SearchStudent();
+                    searchStudent();
                     break;
                 case 6:
-                    SortMenu();
+                    sortMenu();
                     break;
                 case EXIT_CHOICE:
                     sharedModel.saveToFile("students.txt");
@@ -64,7 +64,7 @@ public class StudentUI {
         }
     }
 
-    private void DisplayMenu() {
+    private void displayMenu() {
         System.out.println("\n===== STUDENT MANAGEMENT SYSTEM =====");
         System.out.println("1. Add new student");
         System.out.println("2. Delete student");
@@ -75,7 +75,7 @@ public class StudentUI {
         System.out.println("0. Exit");
     }
 
-    private int GetIntInput(String prompt) {
+    private int getIntInput(String prompt) {
         int value = -1;
         boolean isValid = false;
         while (!isValid) {
@@ -90,7 +90,7 @@ public class StudentUI {
         return value;
     }
 
-    private void PrintStudentTable(List<Student> list) {
+    private void printStudentTable(List<Student> list) {
         if (list == null || list.isEmpty()) return;
 
         int maxId = 10;
@@ -125,7 +125,7 @@ public class StudentUI {
     }
 
     // 1. ADD STUDENT FEATURE
-    private void InputStudentInfo() {
+    private void inputStudentInfo() {
         System.out.println("\n--- ENTER STUDENT INFORMATION ---");
 
         System.out.print("Enter full name: ");
@@ -142,7 +142,7 @@ public class StudentUI {
 
         int accommodationChoice = -1;
         while (accommodationChoice != 1 && accommodationChoice != 2) {
-            accommodationChoice = GetIntInput("Choose residence (1 - Dormitory, 2 - Rented House): ");
+            accommodationChoice = getIntInput("Choose residence (1 - Dormitory, 2 - Rented House): ");
             if (accommodationChoice != 1 && accommodationChoice != 2) {
                 System.out.println("Invalid choice. Please choose 1 or 2.");
             }
@@ -152,11 +152,11 @@ public class StudentUI {
         System.out.println("\n[SYSTEM] Checking and saving data...");
 
         try {
-            editDataController.CheckStudent(name, yearOfBirthStr, id, classId, accommodation);
+            editDataController.checkStudent(name, yearOfBirthStr, id, classId, accommodation);
 
             Student newStudent = new Student(name, yearOfBirthStr, id, classId, accommodation);
 
-            editDataController.AddStudent(newStudent);
+            editDataController.addStudent(newStudent);
             System.out.println("=> ADD STUDENT SUCCESSFULLY!");
 
         } catch (Exception e) {
@@ -165,7 +165,7 @@ public class StudentUI {
     }
 
     // 2. DELETE FEATURE
-    private void DeleteStudent() {
+    private void deleteStudent() {
         while (true) {
             System.out.print("Enter student ID to delete (type '0' to cancel): ");
             String deleteID = scanner.nextLine();
@@ -173,7 +173,7 @@ public class StudentUI {
                 break;
             }
             try {
-                Student student = findController.FindByStudentId(deleteID).isEmpty() ? null : findController.FindByStudentId(deleteID).get(0);
+                Student student = findController.findByStudentId(deleteID).isEmpty() ? null : findController.findByStudentId(deleteID).get(0);
                 if (student == null) {
                     System.out.println("Student not found.");
                     continue;
@@ -181,7 +181,7 @@ public class StudentUI {
                 System.out.println("Please confirm the information before deleting:");
                 List<Student> students = new ArrayList<>();
                 students.add(student);
-                PrintStudentTable(students);
+                printStudentTable(students);
 
                 System.out.println("\n1. Confirm.");
                 System.out.println("2. Cancel.");
@@ -189,7 +189,7 @@ public class StudentUI {
                 String choice = scanner.nextLine();
                 switch (choice) {
                     case "1":
-                        editDataController.DeleteStudent(student);
+                        editDataController.deleteStudent(student);
                         System.out.println("Delete student successful!");
                         break;
                     case "2":
@@ -206,18 +206,18 @@ public class StudentUI {
     }
 
     // 3. DISPLAY LIST FEATURE
-    private void DisplayStudentList() {
-        List<Student> students = display.GetAllStudents();
+    private void displayStudentList() {
+        List<Student> students = display.getAllStudents();
         if (students.isEmpty()) {
             System.out.println("=> The student list is currently empty.");
             return;
         }
         System.out.println("\n--- STUDENT LIST ---");
-        PrintStudentTable(students);
+        printStudentTable(students);
     }
 
     // 4. UPDATE INFORMATION FEATURE
-    private void UpdateStudentInfo() throws Exception {
+    private void updateStudentInfo() throws Exception {
 
         System.out.println("\n--- UPDATE STUDENT INFORMATION ---");
         System.out.print("Enter student ID to edit: ");
@@ -225,7 +225,7 @@ public class StudentUI {
         try {
             StudentModel model = new StudentModel();
             UpdateData data = new UpdateData(model);
-            Student oldStudent = data.FindStudent(targetId);
+            Student oldStudent = data.findStudent(targetId);
             Student newStudent = new Student();
             if (oldStudent == null) {
                 System.out.println("Student not found.");
@@ -252,7 +252,7 @@ public class StudentUI {
                 String accInput = scanner.nextLine();
                 newStudent.setAccommodation(accInput.isEmpty() ? oldStudent.getAccommodation() : accInput);
 
-                data.UpdateStudent(targetId, newStudent);
+                data.updateStudent(targetId, newStudent);
                 System.out.println("Update successful!");
             }
         }
@@ -264,7 +264,7 @@ public class StudentUI {
 
 
     // 5. SEARCH FEATURE
-    private void SearchStudent() {
+    private void searchStudent() {
 
         while (true) {
             System.out.println("\n--- SEARCH STUDENT ---");
@@ -274,7 +274,7 @@ public class StudentUI {
             System.out.println("4. Search by Class ID");
             System.out.println("5. Search by Residence");
             System.out.println("0. Exit");
-            int searchChoice = GetIntInput("Choose search method: ");
+            int searchChoice = getIntInput("Choose search method: ");
 
             if (searchChoice == 0) {
                 System.out.println("Exiting search...");
@@ -289,19 +289,19 @@ public class StudentUI {
 
                 switch (searchChoice) {
                     case 1:
-                        results = findController.FindByName(keyword);
+                        results = findController.findByName(keyword);
                         break;
                     case 2:
-                        results = findController.FindByStudentId(keyword);
+                        results = findController.findByStudentId(keyword);
                         break;
                     case 3:
-                        results = findController.FindByYearOfBirth(keyword);
+                        results = findController.findByYearOfBirth(keyword);
                         break;
                     case 4:
-                        results = findController.FindByClassID(keyword);
+                        results = findController.findByClassID(keyword);
                         break;
                     case 5:
-                        results = findController.FindByAccommodation(keyword);
+                        results = findController.findByAccommodation(keyword);
                         break;
                     default:
                         System.out.println("Invalid choice.");
@@ -310,7 +310,7 @@ public class StudentUI {
 
                 if (results != null && !results.isEmpty()) {
                     System.out.println("\n=> FOUND " + results.size() + " RESULT(S):");
-                    PrintStudentTable(results);
+                    printStudentTable(results);
                 }
             } catch (Exception e) {
                 System.out.println("=> Cannot search: " + e.getMessage());
@@ -319,8 +319,8 @@ public class StudentUI {
     }
 
     //6. SORT FEATURE
-    private void DisplaySortedList() {
-        ArrayList<Student> students = sort.GetStudentList();
+    private void displaySortedList() {
+        ArrayList<Student> students = sort.getStudentList();
 
         if (students.isEmpty()) {
             System.out.println("List have no students.");
@@ -328,10 +328,10 @@ public class StudentUI {
         }
 
         System.out.println("\n--- SORT STUDENT LIST ---");
-        PrintStudentTable(students);
+        printStudentTable(students);
     }
 
-    private void SortMenu() {
+    private void sortMenu() {
         while (true) {
             System.out.println("\n--- SORT STUDENT ---");
             System.out.println("1. Sort by Name");
@@ -352,14 +352,14 @@ public class StudentUI {
             StudentModel.Order order = orderInput.equals("DESC") ? StudentModel.Order.DESC : StudentModel.Order.ASC;
 
             switch (choice) {
-                case 1 -> sort.SortByName(order);
-                case 2 -> sort.SortByStudentID(order);
-                case 3 -> sort.SortByYearOfBirth(order);
-                case 4 -> sort.SortByClassID(order);
+                case 1 -> sort.sortByName(order);
+                case 2 -> sort.sortByStudentID(order);
+                case 3 -> sort.sortByYearOfBirth(order);
+                case 4 -> sort.sortByClassID(order);
                 default -> System.out.println("Invalid choice!");
             }
 
-            DisplaySortedList();
+            displaySortedList();
         }
     }
 }
