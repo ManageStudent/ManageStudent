@@ -13,19 +13,19 @@ public class StudentUI {
     private Scanner scanner;
     private EditData editDataController;
     private Find findController;
-    private StudentModel sharedModel;
+    private StudentModel studentModel;
     private Show display;
     private Sort sort;
     private String filePath = "./src/data/students.txt";
 
     public StudentUI() {
         this.scanner = new Scanner(System.in);
-        this.sharedModel = new StudentModel();
-        this.editDataController = new EditData(this.sharedModel);
-        this.findController = new Find(this.sharedModel);
-        this.display = new Show(this.sharedModel);
-        this.sort = new Sort(this.sharedModel);
-        this.sharedModel.loadFromFile(filePath);
+        this.studentModel = new StudentModel();
+        this.editDataController = new EditData(this.studentModel);
+        this.findController = new Find(this.studentModel);
+        this.display = new Show(this.studentModel);
+        this.sort = new Sort(this.studentModel);
+        this.studentModel.loadFromFile(filePath);
     }
 
     public void start() throws Exception {
@@ -54,7 +54,7 @@ public class StudentUI {
                     sortMenu();
                     break;
                 case EXIT_CHOICE:
-                    sharedModel.saveToFile(filePath);
+                    studentModel.saveToFile(filePath);
 
                     isRunning = false;
                     System.out.println("Exited program. Goodbye!");
@@ -169,7 +169,7 @@ public class StudentUI {
                 System.out.println("Error: Student ID cannot be empty. Please try again.");
                 continue;
             }
-            if (sharedModel.isExistId(input)) {
+            if (studentModel.isExistId(input)) {
                 System.out.println("Error: Student ID already exists. Please try again.");
                 continue;
             }
@@ -276,7 +276,7 @@ public class StudentUI {
         }
 
         try {
-            UpdateData data = new UpdateData(this.sharedModel);
+            UpdateData data = new UpdateData(this.studentModel);
             Student oldStudent = data.findStudent(targetId);
 
             boolean isUpdating = true;
@@ -370,7 +370,7 @@ public class StudentUI {
                                 continue;
                             }
 
-                            if (sharedModel.isExistId(input) && !input.equals(oldStudent.getId())) {
+                            if (studentModel.isExistId(input) && !input.equals(oldStudent.getId())) {
                                 System.out.println("Error: Student ID already exists. Please try again.");
                                 continue;
                             }
