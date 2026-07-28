@@ -1,6 +1,6 @@
-Ngo Van Quan,2007,25648131,SE1234,Rented House,ádasdasd
 Dinh Gia Phu,2005,12345678,SE1801,Dormitory
 Ly Anh Huy,2004,87654321,SE1802,Rented House
 Ngo Van Quan,2005,11223344,SE1801,Dormitory
 Pham Thi Dung,2006,55667788,SE1803,Rented House
 Tran Hai Yen,2004,99887766,SE1802,Dormitory
+Nguyen Hoang Nguyen,2007,10234567,QTKD1005,Dormitory

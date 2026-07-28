@@ -16,6 +16,7 @@ public class StudentUI {
     private StudentModel sharedModel;
     private Show display;
     private Sort sort;
+    private String filePath = "./src/data/students.txt";
 
     public StudentUI() {
         this.scanner = new Scanner(System.in);
@@ -24,7 +25,7 @@ public class StudentUI {
         this.findController = new Find(this.sharedModel);
         this.display = new Show(this.sharedModel);
         this.sort = new Sort(this.sharedModel);
-        this.sharedModel.loadFromFile("../ManageStudent/src/data/students.txt");
+        this.sharedModel.loadFromFile(filePath);
     }
 
     public void start() throws Exception {
@@ -53,7 +54,7 @@ public class StudentUI {
                     sortMenu();
                     break;
                 case EXIT_CHOICE:
-                    sharedModel.saveToFile("students.txt");
+                    sharedModel.saveToFile(filePath);
 
                     isRunning = false;
                     System.out.println("Exited program. Goodbye!");
