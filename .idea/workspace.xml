@@ -9,8 +9,6 @@
       <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI/StudentUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/StudentUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/students.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/students.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/students.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../out/production/ManageStudent/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/ManageStudent/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../out/production/ManageStudent/UI/StudentUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/ManageStudent/UI/StudentUI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../out/production/ManageStudent/controller/EditData.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/ManageStudent/controller/EditData.class" afterDir="false" />

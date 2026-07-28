@@ -539,9 +539,9 @@ public class StudentUI {
                 continue;
             }
 
-            System.out.print("Sort order (ASC/DESC): ");
-            String orderInput = scanner.nextLine().trim().toUpperCase();
-            StudentModel.Order order = orderInput.equals("DESC") ? StudentModel.Order.DESC : StudentModel.Order.ASC;
+            System.out.print("Sort order (1 - ASC, 2 - DESC): ");
+            String orderInput = scanner.nextLine().trim();
+            StudentModel.Order order = orderInput.equals("2") ? StudentModel.Order.DESC : StudentModel.Order.ASC;
 
             switch (choice) {
                 case 1 -> sort.sortByName(order);
