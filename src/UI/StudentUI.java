@@ -24,7 +24,7 @@ public class StudentUI {
         this.findController = new Find(this.sharedModel);
         this.display = new Show(this.sharedModel);
         this.sort = new Sort(this.sharedModel);
-        this.sharedModel.loadFromFile("../ManageStudent/src/data/students.txt");
+        this.sharedModel.loadFromFile("./src/data/students.txt");
     }
 
     public void start() throws Exception {
