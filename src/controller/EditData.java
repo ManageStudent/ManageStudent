@@ -3,7 +3,6 @@ package controller;
 import entity.Student;
 import entity.StudentModel;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class EditData {
@@ -19,29 +18,40 @@ public class EditData {
 
         // Name
         if (student.getName() != null && !student.getName().isEmpty()) {
-            if (!student.getName().matches("^[a-zA-Z\\s]+$")) {
+            String formattedName = student.getName().trim().replaceAll("\\s+", " ");
+            student.setName(formattedName);
+
+            boolean hasNumberOrSpecial = formattedName.matches(".*[^\\p{L}\\s].*");
+            boolean hasAccented = formattedName.matches(".*[\\p{L}&&[^a-zA-Z]].*");
+
+            if (hasNumberOrSpecial && hasAccented) {
+                errors.add("Name must contain only letters and no accented characters allowed.");
+            } else if (hasNumberOrSpecial) {
                 errors.add("Name must contain only letters.");
+            } else if (hasAccented) {
+                errors.add("No accented characters allowed.");
             }
         }
 
         // YearOfBirth
         if (student.getYearOfBirth() != null && !student.getYearOfBirth().isEmpty()) {
-            if (!student.getYearOfBirth().matches("^[0-9]+$")) {
+            if (student.getYearOfBirth().contains(" ")) {
+                errors.add("Year of birth cannot contain spaces.");
+            } else if (!student.getYearOfBirth().matches("^[0-9]+$")) {
                 errors.add("Birth year must contain only numbers.");
             } else {
                 int year = Integer.parseInt(student.getYearOfBirth());
-                int currentYear = LocalDate.now().getYear();
-                if (student.getYearOfBirth().length() != 4 ||
-                        year > currentYear ||
-                        year < currentYear - 100) {
-                    errors.add("Invalid birth year.");
+                if (student.getYearOfBirth().length() != 4 || year < 1970 || year > 2008) {
+                    errors.add("Only birth years from 1970 to 2008 are allowed.");
                 }
             }
         }
 
         // StudentID
         if (student.getId() != null && !student.getId().isEmpty()) {
-            if (!student.getId().matches("\\d+")) {
+            if (student.getId().contains(" ")) {
+                errors.add("Student ID cannot contain spaces.");
+            } else if (!student.getId().matches("\\d+")) {
                 errors.add("Invalid student ID.");
             } else if (student.getId().length() != 8) {
                 errors.add("Student ID must be 8 digits.");
@@ -50,7 +60,9 @@ public class EditData {
 
         // ClassID
         if (student.getClassId() != null && !student.getClassId().isEmpty()) {
-            if (!student.getClassId().matches("^[A-Z0-9]+$")) {
+            if (student.getClassId().contains(" ")) {
+                errors.add("Class ID cannot contain spaces.");
+            } else if (!student.getClassId().matches("^[A-Z0-9]+$")) {
                 errors.add("Class ID must contain only uppercase letters and digits.");
             }
         }
